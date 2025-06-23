@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP32 Lamp Control</title>
+</head>
+<body>
+  <h2>Lamp Control via Java Backend</h2>
+  <button onclick="sendCommand('on')">Turn ON</button>
+  <button onclick="sendCommand('off')">Turn OFF</button>
+
+  <script>
+    const backendURL = "http://<YOUR_JAVA_BACKEND_IP>:8080/api/lamp"; // 👈 Replace with actual IP
+
+    function sendCommand(action) {
+      fetch(`${backendURL}/${action}`, {
+        method: "POST"
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(err => alert("Error: " + err));
+    }
+  </script>
+</body>
+</html>
