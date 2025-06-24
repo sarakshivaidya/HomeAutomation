@@ -9,7 +9,7 @@
   <button onclick="sendCommand('off')">Turn OFF</button>
 
   <script>
-    const backendURL = "http://<YOUR_JAVA_BACKEND_IP>:8080/api/lamp"; // 👈 Replace with actual IP
+    const backendURL = "https://c8b3-2406-7400-94-e0e1-413f-e971-100c-833b.ngrok-free.app/api/lamp"; // 👈 Replace with actual IP
 
     function sendCommand(action) {
       fetch(`${backendURL}/${action}`, {
